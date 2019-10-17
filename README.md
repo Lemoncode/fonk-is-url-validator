@@ -16,7 +16,7 @@ We have the following form model:
 
 ```
 const myFormValues = {
-  product : 'shoes',
+  product: 'shoes',
   price: 20,
 }
 ```
@@ -27,7 +27,9 @@ We can add a isUrl validation to the myFormValues
 import { isUrl } from '@lemoncode/fonk-is-url-validator';
 
 const validationSchema = {
-  price: [isUrl.validator],
+  field: {
+    price: [isUrl.validator],
+  },
 };
 ```
 
@@ -47,12 +49,14 @@ isUrl.setErrorMessage('El campo debe de ser numérico');
 import { isUrl } from '@lemoncode/fonk-is-url-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: isUrl.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: isUrl.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 
