@@ -579,6 +579,17 @@ describe('fonk-is-url-validator specs', () => {
         type: 'IS_URL',
       });
     });
+    it('Should return failed validation with test', () => {
+      const url = 'test';
+
+      const result = validator({ value: url });
+
+      expect(result).toEqual({
+        succeeded: false,
+        message: 'Provided value is not a valid url',
+        type: 'IS_URL',
+      });
+    });
     it('Should return failed validation with http:// shouldfail.com', () => {
       const url = 'http:// shouldfail.com';
 
