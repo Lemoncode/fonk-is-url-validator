@@ -1,7 +1,7 @@
 {
   "name": "@lemoncode/fonk-is-url-validator",
   "version": "0.1.0",
-  "description": "// TODO: Update description: This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to validate if a field of a form ...",
+  "description": "This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to validate if a field of a form is a valid url",
   "main": "dist/@lemoncode/fonk-is-url-validator.cjs.js",
   "module": "dist/@lemoncode/fonk-is-url-validator.esm.js",
   "typings": "typings/index.d.ts",

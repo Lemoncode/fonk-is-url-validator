@@ -6,9 +6,7 @@
 
 This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to:
 
-// TODO: Update description and example.
-
-- Validate if a field of a form ....
+- Validate if a field of a form is a valid url
 
 How to install it:
 
@@ -20,21 +18,21 @@ How to add it to an existing form validation schema:
 
 We have the following form model:
 
-```
+```javascript
 const myFormValues = {
   product: 'shoes',
-  price: 20,
-}
+  url: 'https://shoefactory.com/product-17',
+};
 ```
 
-We can add a isUrl validation to the myFormValues
+We can add an isUrl validation to the myFormValues
 
 ```javascript
 import { isUrl } from '@lemoncode/fonk-is-url-validator';
 
 const validationSchema = {
   field: {
-    price: [isUrl.validator],
+    url: [isUrl.validator],
   },
 };
 ```
@@ -56,7 +54,7 @@ import { isUrl } from '@lemoncode/fonk-is-url-validator';
 
 const validationSchema = {
   field: {
-    price: [
+    url: [
       {
         validator: isUrl.validator,
         message: 'Error message only updated for the validation schema',

@@ -1,7 +1,5 @@
-import {
-  ValidationSchema,
-  createFormValidation,
-} from '@lemoncode/fonk';
+import { ValidationSchema, createFormValidation } from '@lemoncode/fonk';
+
 import { isUrl } from '@lemoncode/fonk-is-url-validator';
 
 const validationSchema: ValidationSchema = {
@@ -12,10 +10,9 @@ const validationSchema: ValidationSchema = {
 
 const formValidation = createFormValidation(validationSchema);
 
-// TODO: Update example values 'test' and/or 10 if needed
 Promise.all([
   formValidation.validateField('myField', 'test'),
-  formValidation.validateField('myField', 10),
+  formValidation.validateField('myField', 'https://www.google.com'),
 ]).then(([failedResult, succeededResult]) => {
   document.getElementById('app').innerHTML = `
 <div style="flex-grow: 1;margin-left:2rem;">
@@ -35,7 +32,7 @@ ${JSON.stringify(failedResult, null, 2)}
   <h2>Example with succeeded result:</h2>
 
 <pre>
-formValidation.validateField('myField', 10)
+formValidation.validateField('myField', https://www.google.com)
 </pre>
 
   <h3>Result: </h3>
